@@ -40,6 +40,12 @@ def plot(x_scatter_standard, y_scatter_standard, polynomial, fit_x, fit_y):
     y = polynomial_cf[0] * x ** 4 + polynomial_cf[1] * x ** 3 + polynomial_cf[2] * x ** 2 \
         + polynomial_cf[3] * x + polynomial_cf[4]
 
+    fig = plt.figure(figsize=(11, 7))
+
+    plt.style.use('ggplot')
+    plt.xlabel('Concentration')
+    plt.ylabel('Fluorescence or Absorbance Output Measure')
+    plt.text(1.8, 1.8, f'R Squared: {r_squared}')
     plt.scatter(x_s, y_s)
     plt.scatter(fit_x, fit_y, alpha=0.8)
     plt.plot(x, y)
